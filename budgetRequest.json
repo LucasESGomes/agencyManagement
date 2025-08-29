@@ -1,0 +1,15 @@
+{
+    "budget": [
+        {
+            "id": "",
+            "name": "",
+            "surname": "",
+            "phone": "",
+            "email": "",
+            "service": "",
+            "description": "",
+            "maxBudget": 0,
+            "timeService": ""
+        }
+    ]
+}

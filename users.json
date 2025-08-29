@@ -1,11 +1,11 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Alice",
-            "email": "",
-            "phone": 1234567890,
-            "password" : ""   
-        }
-    ]
+  "users": [
+    {
+      "id": "ac57",
+      "username": "Vini",
+      "email": "vini@gmail.com",
+      "phone": "11111",
+      "password": "$2a$10$Mi2K/YMGRLwV1fg2oY.YseSTSkSvEYrbqpQxZpS.OoFWGUmzrjsUu"
+    }
+  ]
 }
