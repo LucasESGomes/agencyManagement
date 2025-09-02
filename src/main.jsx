@@ -16,9 +16,9 @@ import './index.css'
 
 
 const router = createBrowserRouter([
-  {path: '/', element: <Register />},
-  {path: '/entrar', element: <Login />},
-  {path: '/Início', element: <Home />}
+  {path: '/', element: <Home />},
+  {path: '/Cadastro', element: <Register />},
+  {path: '/Entrar', element: <Login />}
 ]);
 
 

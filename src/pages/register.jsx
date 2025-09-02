@@ -15,7 +15,7 @@ export default function Register () {
             return setMessage("Preencha todos os campos");
         }
 
-
+        
         // Gerando a senha criptografada
         const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -24,8 +24,9 @@ export default function Register () {
         await fetch("http://localhost:5000/users", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, email, phone, password: hashedPassword }),
+            body: JSON.stringify({ username, email, phone, password: hashedPassword, role: "user"}),
         });
+
 
         setMessage("Usuário cadastrado com sucesso!");
         setUsername('');

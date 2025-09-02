@@ -1,3 +1,4 @@
+import { Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import bcrypt from 'bcryptjs';
 
@@ -23,10 +24,15 @@ export default function Login () {
         const findUser = users[0];
         const isMatch = await bcrypt.compare(password, findUser.password);
 
-        if (isMatch) {
-            setMessage("Login realizado com sucesso!");
+        if (!isMatch) {
+            setMessage("Login ou senha incorreto(s)");
+        }  
+
+        //Gerenciando o acesso pelo "role" do usuário
+        if (findUser.role === "admin") {
+            Navigate("./home.jsx")
         } else {
-            setMessage("Senha ou nome incorreto");
+            Navigate("./home.jsx")
         }
 
         setUsername('');
