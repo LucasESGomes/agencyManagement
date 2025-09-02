@@ -1,1 +1,0 @@
-const secretKey = import.meta.env.VITE_SECRETKEY

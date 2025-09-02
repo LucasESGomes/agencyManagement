@@ -1,5 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useState } from 'react';
+import { generateToken } from '../../server/auth.js'
+
 import bcrypt from 'bcryptjs';
 
 export default function Login () {
@@ -28,12 +30,12 @@ export default function Login () {
             setMessage("Login ou senha incorreto(s)");
         }  
 
-        //Gerenciando o acesso pelo "role" do usuário
-        if (findUser.role === "admin") {
-            Navigate("./home.jsx")
-        } else {
-            Navigate("./home.jsx")
-        }
+        const token = generateToken(findUser);
+
+        //Guardando o token apenas durante a sessão
+        sessionStorage.setItem("Token", token)
+
+
 
         setUsername('');
         setPassword('');
