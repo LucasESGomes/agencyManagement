@@ -35,7 +35,12 @@ export default function Login () {
         //Guardando o token apenas durante a sessão
         sessionStorage.setItem("Token", token)
 
-
+        //Redirecionando o usuário pelo 'role'
+        if(findUser.role === "admin") {
+            Navigate('./budgetEdit.jsx')
+        } else {
+            Navigate('./home.jsx')
+        }
 
         setUsername('');
         setPassword('');
