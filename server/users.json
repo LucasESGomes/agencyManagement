@@ -6,6 +6,104 @@
       "email": "vini@gmail.com",
       "phone": "11111",
       "password": "$2a$10$Mi2K/YMGRLwV1fg2oY.YseSTSkSvEYrbqpQxZpS.OoFWGUmzrjsUu"
+    },
+    {
+      "id": "c099",
+      "username": "Otávio",
+      "email": "otavio@gmail.com",
+      "phone": "2394823",
+      "password": "$2a$10$tgevv1cKgHEcqRMUa9ZSTO53k0kc.9D9zyQDkFrkIByIk92Dhj9vi",
+      "role": "user"
+    },
+    {
+      "id": "2a6f",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "3fae",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "4d3c",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "8730",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "75de",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "9138",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "cc3e",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "de25",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "1e9a",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "8871",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "fa5f",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "d909",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "4bd0",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "1c80",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "f05a",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "6cd9",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "e80d",
+      "username": "Otávio",
+      "password": "hash"
+    },
+    {
+      "id": "26c3",
+      "username": "Otávio",
+      "password": "hash"
     }
   ]
 }

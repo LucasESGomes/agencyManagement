@@ -1,13 +1,13 @@
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { generateToken } from '../../server/auth.js'
-
+import { jwtDecode } from 'jwt-decode';
 import bcrypt from 'bcryptjs';
 
-export default function Login () {
+function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         if (!username || !password) {
@@ -15,6 +15,7 @@ export default function Login () {
             return;
         }
 
+        // 1. Busca usuário no json-server
         const response = await fetch(`http://localhost:5000/users?username=${username}`);
         const users = await response.json();
 
@@ -28,36 +29,58 @@ export default function Login () {
 
         if (!isMatch) {
             setMessage("Login ou senha incorreto(s)");
-        }  
+            return;
+        }
 
-        const token = generateToken(findUser);
+        // 2. Requisita o token ao backend (rota /login no server.js)
+        const tokenResponse = await fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+        });
 
-        //Guardando o token apenas durante a sessão
-        sessionStorage.setItem("Token", token)
+        const data = await tokenResponse.json();
 
-        //Redirecionando o usuário pelo 'role'
-        if(findUser.role === "admin") {
-            Navigate('./budgetEdit.jsx')
+        if (!tokenResponse.ok) {
+            setMessage(data.message || "Erro ao gerar token");
+            return;
+        }
+
+        const token = data.token;
+
+        // 3. Guarda o token apenas durante a sessão
+        sessionStorage.setItem("Token", token);
+
+        // 4. Decodifica o token para pegar o role
+        const decoded = jwtDecode(token);
+
+        // 5. Redireciona pelo role
+        if (decoded.role === "admin") {
+            navigate('/budgetEdit');
         } else {
-            Navigate('./home.jsx')
+            navigate('/home');
         }
 
         setUsername('');
         setPassword('');
     };
 
-    return(
+    return (
         <div className='p-4 bg-white shadow rounded space-y-3'>
             <h1>Login</h1>
 
             <input
-                type="text" placeholder='Digite o nome de usuário' value={username} onChange={(e) => setUsername(e.target.value)}
-                className=''
+                type="text"
+                placeholder='Digite o nome de usuário'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
             />
 
             <input
-                type="password" placeholder='Digite a sua senha' value={password} onChange={(e) => setPassword(e.target.value)}
-                className=''
+                type="password"
+                placeholder='Digite a sua senha'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
             />
 
             <button onClick={handleLogin} className='bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200'>
@@ -68,3 +91,5 @@ export default function Login () {
         </div>
     );
 }
+
+export default Login;  
