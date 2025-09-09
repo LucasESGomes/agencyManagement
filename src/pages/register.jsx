@@ -24,7 +24,7 @@ export default function Register() {
       email,
       telephone,
       password: hashedPassword,
-      role: "user" // 👈 aqui fica fixo no banco, se precisar mudar, só editando direto no JSON
+      role: "user" 
     };
 
     // Envia para o json-server (rota POST /users)
