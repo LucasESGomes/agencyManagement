@@ -10,6 +10,8 @@ import Register from './pages/register.jsx';
 
 import Login from './pages/login.jsx';
 
+import BudgetEdit from './pages/budgetEdit.jsx'
+
 
 //Tailwindcss import
 import './index.css'
@@ -18,7 +20,8 @@ import './index.css'
 const router = createBrowserRouter([
   {path: '/', element: <Home />},
   {path: '/Cadastro', element: <Register />},
-  {path: '/Entrar', element: <Login />}
+  {path: '/Entrar', element: <Login />},
+  {path: '/editarOrçamento', element: < BudgetEdit/>}
 ]);
 
 

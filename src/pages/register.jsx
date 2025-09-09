@@ -1,4 +1,3 @@
-// src/Register.jsx
 import { useState } from "react";
 import bcrypt from "bcryptjs";
 
@@ -51,31 +50,21 @@ export default function Register() {
       <h1>Registro</h1>
 
       <input
-        type="text"
-        placeholder="Nome de usuário"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        type="text" placeholder="Nome de usuário" value={username} onChange={(e) => setUsername(e.target.value)}
+        className=""
       />
 
       <input
-        type="email"
-        placeholder="E-mail"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)}
+        className=""
       />
 
       <input
-        type="text"
-        placeholder="Telefone"
-        value={telephone}
-        onChange={(e) => setTelephone(e.target.value)}
+        type="text" placeholder="Telefone" value={telephone} onChange={(e) => setTelephone(e.target.value)}
       />
 
       <input
-        type="password"
-        placeholder="Senha"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)}
       />
 
       <button onClick={handleRegister}>Registrar</button>

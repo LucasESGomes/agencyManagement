@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
+import bcrypt from "bcryptjs";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -9,36 +9,74 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const response = await fetch("http://localhost:5000/login.jsx", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password })
-    });
-
-    if (!response.ok) {
-      setMessage("Usuário ou senha inválidos");
+    if (!username || !password) {
+      setMessage("Preencha todos os campos");
       return;
     }
 
-    const { token } = await response.json();
+    // Busca usuário no json-server
+    const response = await fetch(`http://localhost:5000/users?username=${username}`);
+    const users = await response.json();
 
-    sessionStorage.setItem("token", token);
+    if (!users || users.length === 0) {
+      setMessage("Usuário não encontrado");
+      return;
+    }
 
-    const decoded = jwtDecode(token);
+    const findUser = users[0];
+    const isMatch = await bcrypt.compare(password, findUser.password);
+
+    if (!isMatch) {
+      setMessage("Login ou senha incorreto(s)");
+      return;
+    }
+
+    // 🔑 Gerando um "token fake" só para guardar no sessionStorage
+    // Isso simula o payload de um JWT
+    const payload = {
+      id: findUser.id,
+      role: findUser.role,
+      username: findUser.username,
+    };
+    const token = btoa(JSON.stringify(payload)); // transforma em base64 string
+
+    // Guarda na sessão
+    sessionStorage.setItem("Token", token);
+
+    // Decodifica (simulação do jwtDecode, mas usando atob)
+    const decoded = JSON.parse(atob(token));
 
     if (decoded.role === "admin") {
       navigate("/budgetEdit");
     } else {
       navigate("/home");
     }
+
+    setUsername("");
+    setPassword("");
   };
 
   return (
-    <div>
+    <div className="p-4 bg-white shadow rounded space-y-3">
       <h1>Login</h1>
-      <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Usuário" />
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha" />
-      <button onClick={handleLogin}>Entrar</button>
+
+      <input
+        type="text" placeholder="Digite o nome de usuário" value={username} onChange={(e) => setUsername(e.target.value)}
+        className=""
+      />
+
+      <input
+        type="password" placeholder="Digite a sua senha" value={password} onChange={(e) => setPassword(e.target.value)}
+        className=""
+      />
+
+      <button
+        onClick={handleLogin}
+        className="bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200"
+      >
+        Entrar
+      </button>
+
       {message && <p>{message}</p>}
     </div>
   );

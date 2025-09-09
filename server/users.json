@@ -30,6 +30,14 @@
       "telephone": "123124",
       "password": "$2a$10$OGUEqqrTG4GCk6lU2sLbQeA9Qd1ACmR0OewnQ7ZvEBos0WxkpvHGq",
       "role": "user"
+    },
+    {
+      "id": "6bd9",
+      "username": "Waves",
+      "email": "waves@gmail.com",
+      "telephone": "12121212",
+      "password": "$2a$10$DuOG895xXn3kR57.y4zEouCQPfjgBcUSY9FTIBI2oUMaqom1WUK62",
+      "role": "user"
     }
   ]
 }
