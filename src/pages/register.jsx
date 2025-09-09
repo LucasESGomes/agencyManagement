@@ -1,60 +1,85 @@
-import { useState } from 'react';
-import bcrypt from 'bcryptjs';
+// src/Register.jsx
+import { useState } from "react";
+import bcrypt from "bcryptjs";
 
-export default function Register () {
+export default function Register() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
-    const [message, setMessage] = useState('');
+  const handleRegister = async () => {
+    if (!username || !email || !telephone || !password) {
+      setMessage("Preencha todos os campos!");
+      return;
+    }
 
+    // Gera o hash da senha
+    const salt = bcrypt.genSaltSync(10);
+    const hashedPassword = bcrypt.hashSync(password, salt);
 
-    const handleRegister = async () => {
-        if (!username || !email || !phone || !password) {
-            return setMessage("Preencha todos os campos");
-        }
-
-        
-        // Gerando a senha criptografada
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-
-        // Enviando os dados para a API
-        await fetch("http://localhost:5000/users", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, email, phone, password: hashedPassword, role: "user"}),
-        });
-
-
-        setMessage("Usuário cadastrado com sucesso!");
-        setUsername('');
-        setEmail('');
-        setPhone('');
-        setPassword('');  
+    // Cria o objeto de usuário
+    const newUser = {
+      username,
+      email,
+      telephone,
+      password: hashedPassword,
+      role: "user" // 👈 aqui fica fixo no banco, se precisar mudar, só editando direto no JSON
     };
 
-    return (
-        <div className='p-4 bg-white shadow rounded space-y-3'>
-            
-            <input type="text" placeholder='Insira o nome' value={username} onChange={(e) => setUsername(e.target.value)} 
-            className='border p-2 w-full rounded-md'/>
+    // Envia para o json-server (rota POST /users)
+    const response = await fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newUser)
+    });
 
-            <input type="text" placeholder='Insira o Email' value={email} onChange={(e) => setEmail(e.target.value)} 
-            className=''/>
+    if (response.ok) {
+      setMessage("Usuário registrado com sucesso!");
+      setUsername("");
+      setEmail("");
+      setTelephone("");
+      setPassword("");
+    } else {
+      setMessage("Erro ao registrar usuário");
+    }
+  };
 
-            <input type="number" placeholder='Insira o telefone' value={phone} onChange={(e) => setPhone(e.target.value)}
-            className=''/>
+  return (
+    <div>
+      <h1>Registro</h1>
 
-            <input type="password" placeholder='Insira a sua senha' value={password} onChange={(e) => setPassword(e.target.value)} 
-            className=''/>
+      <input
+        type="text"
+        placeholder="Nome de usuário"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
 
-            <button onClick={handleRegister}>
-                Registrar
-            </button>
+      <input
+        type="email"
+        placeholder="E-mail"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
 
-        {message && <p>{message}</p>}
-        </div>
-    );
+      <input
+        type="text"
+        placeholder="Telefone"
+        value={telephone}
+        onChange={(e) => setTelephone(e.target.value)}
+      />
+
+      <input
+        type="password"
+        placeholder="Senha"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+
+      <button onClick={handleRegister}>Registrar</button>
+      {message && <p>{message}</p>}
+    </div>
+  );
 }

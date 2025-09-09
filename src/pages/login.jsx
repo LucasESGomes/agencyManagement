@@ -1,95 +1,45 @@
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import { jwtDecode } from 'jwt-decode';
-import bcrypt from 'bcryptjs';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
-function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [message, setMessage] = useState('');
-    const navigate = useNavigate();
+export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
-    const handleLogin = async () => {
-        if (!username || !password) {
-            setMessage("Preencha todos os campos");
-            return;
-        }
+  const handleLogin = async () => {
+    const response = await fetch("http://localhost:5000/login.jsx", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password })
+    });
 
-        // 1. Busca usuário no json-server
-        const response = await fetch(`http://localhost:5000/users?username=${username}`);
-        const users = await response.json();
+    if (!response.ok) {
+      setMessage("Usuário ou senha inválidos");
+      return;
+    }
 
-        if (!users || users.length === 0) {
-            setMessage("Usuário não encontrado");
-            return;
-        }
+    const { token } = await response.json();
 
-        const findUser = users[0];
-        const isMatch = await bcrypt.compare(password, findUser.password);
+    sessionStorage.setItem("token", token);
 
-        if (!isMatch) {
-            setMessage("Login ou senha incorreto(s)");
-            return;
-        }
+    const decoded = jwtDecode(token);
 
-        // 2. Requisita o token ao backend (rota /login no server.js)
-        const tokenResponse = await fetch("http://localhost:5000/users", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, password })
-        });
+    if (decoded.role === "admin") {
+      navigate("/budgetEdit");
+    } else {
+      navigate("/home");
+    }
+  };
 
-        const data = await tokenResponse.json();
-
-        if (!tokenResponse.ok) {
-            setMessage(data.message || "Erro ao gerar token");
-            return;
-        }
-
-        const token = data.token;
-
-        // 3. Guarda o token apenas durante a sessão
-        sessionStorage.setItem("Token", token);
-
-        // 4. Decodifica o token para pegar o role
-        const decoded = jwtDecode(token);
-
-        // 5. Redireciona pelo role
-        if (decoded.role === "admin") {
-            navigate('/budgetEdit');
-        } else {
-            navigate('/home');
-        }
-
-        setUsername('');
-        setPassword('');
-    };
-
-    return (
-        <div className='p-4 bg-white shadow rounded space-y-3'>
-            <h1>Login</h1>
-
-            <input
-                type="text"
-                placeholder='Digite o nome de usuário'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-            />
-
-            <input
-                type="password"
-                placeholder='Digite a sua senha'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-
-            <button onClick={handleLogin} className='bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200'>
-                Entrar
-            </button>
-
-            {message && <p>{message}</p>}
-        </div>
-    );
+  return (
+    <div>
+      <h1>Login</h1>
+      <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Usuário" />
+      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha" />
+      <button onClick={handleLogin}>Entrar</button>
+      {message && <p>{message}</p>}
+    </div>
+  );
 }
-
-export default Login;  

@@ -16,94 +16,20 @@
       "role": "user"
     },
     {
-      "id": "2a6f",
-      "username": "Otávio",
-      "password": "hash"
+      "id": "e2c1",
+      "username": "Teixeira",
+      "email": "teixeira@gmail.com",
+      "phone": "12312312",
+      "password": "$2a$10$fJByEH9MGQNnPDB5CWAtK.QDYp6PPrB2jb0cHgUlcJ2sUvUHnuAN.",
+      "role": "user"
     },
     {
-      "id": "3fae",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "4d3c",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "8730",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "75de",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "9138",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "cc3e",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "de25",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "1e9a",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "8871",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "fa5f",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "d909",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "4bd0",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "1c80",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "f05a",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "6cd9",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "e80d",
-      "username": "Otávio",
-      "password": "hash"
-    },
-    {
-      "id": "26c3",
-      "username": "Otávio",
-      "password": "hash"
+      "id": "3444",
+      "username": "Lucas",
+      "email": "lucas@gmail.com",
+      "telephone": "123124",
+      "password": "$2a$10$OGUEqqrTG4GCk6lU2sLbQeA9Qd1ACmR0OewnQ7ZvEBos0WxkpvHGq",
+      "role": "user"
     }
   ]
 }
