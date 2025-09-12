@@ -3,13 +3,14 @@ import bcrypt from "bcryptjs";
 
 export default function Register() {
   const [username, setUsername] = useState("");
+  const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
   const handleRegister = async () => {
-    if (!username || !email || !telephone || !password) {
+    if (!username || !surname || !email || !telephone || !password) {
       setMessage("Preencha todos os campos!");
       return;
     }
@@ -21,6 +22,7 @@ export default function Register() {
     // Cria o objeto de usuário
     const newUser = {
       username,
+      surname,
       email,
       telephone,
       password: hashedPassword,
@@ -34,9 +36,12 @@ export default function Register() {
       body: JSON.stringify(newUser)
     });
 
+    localStorage.setItem("userData", JSON.stringify({ username, surname, email, telephone}));
+
     if (response.ok) {
       setMessage("Usuário registrado com sucesso!");
       setUsername("");
+      setSurname("");
       setEmail("");
       setTelephone("");
       setPassword("");
@@ -50,9 +55,14 @@ export default function Register() {
       <h1>Registro</h1>
 
       <input
-        type="text" placeholder="Nome de usuário" value={username} onChange={(e) => setUsername(e.target.value)}
+        type="text" placeholder="Insira o seu primeiro nome" value={username} onChange={(e) => setUsername(e.target.value)}
         className=""
       />
+
+      <input
+        type="text" placeholder="Insira o seu sobrenome" value={username} onChange={(e) => setUsername(e.target.value)}
+        className=""
+      />  
 
       <input
         type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)}

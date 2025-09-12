@@ -10,7 +10,9 @@ import Register from './pages/register.jsx';
 
 import Login from './pages/login.jsx';
 
-import BudgetEdit from './pages/budgetEdit.jsx'
+import FormBudget from './pages/formBudget.jsx';
+
+import BudgetEdit from './pages/budgetEdit.jsx';
 
 
 //Tailwindcss import
@@ -21,6 +23,7 @@ const router = createBrowserRouter([
   {path: '/', element: <Home />},
   {path: '/Cadastro', element: <Register />},
   {path: '/Entrar', element: <Login />},
+  {path: '/formularioOrcamento', element: <FormBudget />},
   {path: '/editarOrçamento', element: < BudgetEdit/>}
 ]);
 
