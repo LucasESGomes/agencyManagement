@@ -65,6 +65,15 @@
       "telephone": "12312312312",
       "password": "$2a$10$./yQE.rzT7dSqIkiK964iO15gquNqpZqeRehTKJk0jNwY0qj5gotu",
       "role": "admin"
+    },
+    {
+      "id": "8c39",
+      "username": "bom",
+      "surname": "bom",
+      "email": "bom@gmail.com",
+      "telephone": "123123123",
+      "password": "$2a$10$rmoi0Uafme2LAGSbXKX8L.pTalu7K.IAK8ozmnqZMWprp4whQKbb.",
+      "role": "admin"
     }
   ],
   "budget": [

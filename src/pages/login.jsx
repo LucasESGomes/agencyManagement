@@ -41,15 +41,15 @@ export default function Login() {
     const token = btoa(JSON.stringify(payload)); // transforma em base64 string
 
     // Guarda na sessão
-    sessionStorage.setItem("Token", token);
+    sessionStorage.setItem("token", token);
 
     // Decodifica (simulação do jwtDecode, mas usando atob)
     const decoded = JSON.parse(atob(token));
 
     if (decoded.role === "admin") {
-      navigate("/budgetEdit");
+      navigate("/editarOrcamento");
     } else {
-      navigate("/home");
+      navigate("/");
     }
 
     setUsername("");

@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   {path: '/Cadastro', element: <Register />},
   {path: '/Entrar', element: <Login />},
   {path: '/formularioOrcamento', element: <FormBudget />},
-  {path: '/editarOrçamento', element: < BudgetEdit/>}
+  {path: '/editarOrcamento', element: < BudgetEdit/>}
 ]);
 
 
