@@ -48,6 +48,7 @@ export default function Register() {
     } else {
       setMessage("Erro ao registrar usuário");
     }
+
   };
 
   return (
@@ -70,7 +71,7 @@ export default function Register() {
       />
 
       <input
-        type="text" placeholder="Telefone" value={telephone} onChange={(e) => setTelephone(e.target.value)}
+        type="number" placeholder="Telefone" value={telephone} onChange={(e) => setTelephone(e.target.value)}
       />
 
       <input

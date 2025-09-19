@@ -1,54 +1,6 @@
 {
   "users": [
     {
-      "id": "ac57",
-      "username": "Vini",
-      "email": "vini@gmail.com",
-      "phone": "11111",
-      "password": "$2a$10$Mi2K/YMGRLwV1fg2oY.YseSTSkSvEYrbqpQxZpS.OoFWGUmzrjsUu"
-    },
-    {
-      "id": "c099",
-      "username": "Otávio",
-      "email": "otavio@gmail.com",
-      "phone": "2394823",
-      "password": "$2a$10$tgevv1cKgHEcqRMUa9ZSTO53k0kc.9D9zyQDkFrkIByIk92Dhj9vi",
-      "role": "user"
-    },
-    {
-      "id": "e2c1",
-      "username": "Teixeira",
-      "email": "teixeira@gmail.com",
-      "phone": "12312312",
-      "password": "$2a$10$fJByEH9MGQNnPDB5CWAtK.QDYp6PPrB2jb0cHgUlcJ2sUvUHnuAN.",
-      "role": "user"
-    },
-    {
-      "id": "3444",
-      "username": "Lucas",
-      "email": "lucas@gmail.com",
-      "telephone": "123124",
-      "password": "$2a$10$OGUEqqrTG4GCk6lU2sLbQeA9Qd1ACmR0OewnQ7ZvEBos0WxkpvHGq",
-      "role": "user"
-    },
-    {
-      "id": "6bd9",
-      "username": "Waves",
-      "email": "waves@gmail.com",
-      "telephone": "12121212",
-      "password": "$2a$10$DuOG895xXn3kR57.y4zEouCQPfjgBcUSY9FTIBI2oUMaqom1WUK62",
-      "role": "user"
-    },
-    {
-      "id": "b034",
-      "username": "Lucas",
-      "surname": "Gomes",
-      "email": "lucas@gmail.com",
-      "telephone": "1198989898",
-      "password": "$2a$10$UY7x6Ehf2FuCFXnxcrYm7OJreAKDRkBOi2cAZ5UXB/PF23tJplnj.",
-      "role": "user"
-    },
-    {
       "id": "9a40",
       "username": "oi",
       "surname": "ola",
@@ -77,12 +29,6 @@
     }
   ],
   "budget": [
-    {
-      "service": "",
-      "description": "",
-      "maxBudget": 0,
-      "timeService": "",
-      "id": "3bb1"
-    }
+    
   ]
 }
