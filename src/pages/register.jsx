@@ -60,7 +60,7 @@ export default function Register() {
       />
 
       <input
-        type="text" placeholder="Insira o seu sobrenome" value={username} onChange={(e) => setUsername(e.target.value)}
+        type="text" placeholder="Insira o seu sobrenome" value={surname} onChange={(e) => setSurname(e.target.value)}
         className=""
       />  
 

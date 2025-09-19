@@ -38,6 +38,42 @@
       "telephone": "12121212",
       "password": "$2a$10$DuOG895xXn3kR57.y4zEouCQPfjgBcUSY9FTIBI2oUMaqom1WUK62",
       "role": "user"
+    },
+    {
+      "id": "b034",
+      "username": "Lucas",
+      "surname": "Gomes",
+      "email": "lucas@gmail.com",
+      "telephone": "1198989898",
+      "password": "$2a$10$UY7x6Ehf2FuCFXnxcrYm7OJreAKDRkBOi2cAZ5UXB/PF23tJplnj.",
+      "role": "user"
+    },
+    {
+      "id": "9a40",
+      "username": "oi",
+      "surname": "ola",
+      "email": "oi@gmail.com",
+      "telephone": "123123123",
+      "password": "$2a$10$BFrdvEtEgD0ttYDk4JxPJuxLdJ9LER51oZX1RD36ikqrwNXIYR3Lu",
+      "role": "user"
+    },
+    {
+      "id": "3f72",
+      "username": "ola",
+      "surname": "ola1",
+      "email": "asdf@gmail.com",
+      "telephone": "12312312312",
+      "password": "$2a$10$./yQE.rzT7dSqIkiK964iO15gquNqpZqeRehTKJk0jNwY0qj5gotu",
+      "role": "admin"
+    }
+  ],
+  "budget": [
+    {
+      "service": "",
+      "description": "",
+      "maxBudget": 0,
+      "timeService": "",
+      "id": "3bb1"
     }
   ]
 }
