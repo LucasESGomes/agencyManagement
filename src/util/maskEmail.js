@@ -6,4 +6,4 @@ const maskEmail = (value) => {
       .replace(/(\..*)\./g, '$1');     // Evita dois pontos seguidos no domínio
   };
   
-  export default maskEmail;
+export default maskEmail;

@@ -1,6 +1,14 @@
 import { useState } from "react";
 import bcrypt from "bcryptjs";
 
+//util
+import maskEmail from "../util/maskEmail";
+import maskPhone from "../util/maskPhone";
+
+//Components
+import Footer from "../components/footer";
+
+
 export default function Register() {
   const [username, setUsername] = useState("");
   const [surname, setSurname] = useState("");
@@ -9,6 +17,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  //Exigindo o preenchimento de todos os campos
   const handleRegister = async () => {
     if (!username || !surname || !email || !telephone || !password) {
       setMessage("Preencha todos os campos!");
@@ -36,7 +45,9 @@ export default function Register() {
       body: JSON.stringify(newUser)
     });
 
+    // Salvando informaçoes do usuário no localStorage
     localStorage.setItem("userData", JSON.stringify({ username, surname, email, telephone}));
+
 
     if (response.ok) {
       setMessage("Usuário registrado com sucesso!");
@@ -53,33 +64,37 @@ export default function Register() {
 
   return (
     <div>
-      <h1>Registro</h1>
+      <div>
+        <h1>Registro</h1>
 
-      <input
-        type="text" placeholder="Insira o seu primeiro nome" value={username} onChange={(e) => setUsername(e.target.value)}
-        className=""
-      />
+        <input
+          type="text" placeholder="Insira o seu primeiro nome" value={username} onChange={(e) => setUsername(e.target.value)}
+          className=""
+        />
 
-      <input
-        type="text" placeholder="Insira o seu sobrenome" value={surname} onChange={(e) => setSurname(e.target.value)}
-        className=""
-      />  
+        <input
+          type="text" placeholder="Insira o seu sobrenome" value={surname} onChange={(e) => setSurname(e.target.value)}
+          className=""
+        />  
 
-      <input
-        type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)}
-        className=""
-      />
+        <input
+          type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(maskEmail(e.target.value))}
+          className=""
+        />
 
-      <input
-        type="number" placeholder="Telefone" value={telephone} onChange={(e) => setTelephone(e.target.value)}
-      />
+        <input
+          type="tel" placeholder="Telefone" value={telephone} onChange={(e) => setTelephone(maskPhone(e.target.value))}
+        />
 
-      <input
-        type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)}
-      />
+        <input
+          type="password" placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <button onClick={handleRegister}>Registrar</button>
-      {message && <p>{message}</p>}
+        <button onClick={handleRegister}>Registrar</button>
+        {message && <p>{message}</p>}
+      </div>
+
+      <Footer />
     </div>
   );
 }

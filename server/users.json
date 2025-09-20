@@ -26,9 +26,16 @@
       "telephone": "123123123",
       "password": "$2a$10$rmoi0Uafme2LAGSbXKX8L.pTalu7K.IAK8ozmnqZMWprp4whQKbb.",
       "role": "admin"
+    },
+    {
+      "id": "4dd6",
+      "username": "Lucas",
+      "surname": "lucas@mail.com",
+      "email": "lucas@gmail.com",
+      "telephone": "(11) 98646-8289",
+      "password": "$2a$10$6EKzv7DzX2E.BpIL3thBcODC/mGiFWEED.CVCtd81DWgWarotLeE2",
+      "role": "user"
     }
   ],
-  "budget": [
-    
-  ]
+  "budget": []
 }
