@@ -14,6 +14,8 @@ import FormBudget from './pages/formBudget.jsx';
 
 import BudgetEdit from './pages/budgetEdit.jsx';
 
+import AboutUs from './pages/aboutSection.jsx';
+
 
 //Tailwindcss import
 import './index.css'
@@ -23,7 +25,8 @@ const router = createBrowserRouter([
   {path: '/', element: <Home />},
   {path: '/Cadastro', element: <Register />},
   {path: '/Entrar', element: <Login />},
-  {path: '/formularioOrcamento', element: <FormBudget />},
+  {path: '/Sobre-Nos', element: < AboutUs/>},
+  {path: '/Formulario-Orcamento', element: <FormBudget />},
   {path: '/editarOrcamento', element: < BudgetEdit/>}
 ]);
 

@@ -9,7 +9,7 @@ import { MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="absolute bottom-0 w-full bg-red-950 text-white">
+    <footer className="relative bottom-0 w-full bg-red-950 text-white">
       {/* Seção principal do footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -20,7 +20,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="#"
+                    href="/Sobre-Nos"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
                     Sobre Nós

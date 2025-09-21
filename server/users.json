@@ -35,7 +35,28 @@
       "telephone": "(11) 98646-8289",
       "password": "$2a$10$6EKzv7DzX2E.BpIL3thBcODC/mGiFWEED.CVCtd81DWgWarotLeE2",
       "role": "user"
+    },
+    {
+      "id": "8fe2",
+      "username": "Otávio",
+      "surname": "Vinicius",
+      "email": "otavio@gmail.com",
+      "telephone": "(11) 39483-3483",
+      "password": "$2a$10$IdCuoiPIu9ApJqgrJYhsJuAPy9eY0IPa2asnX4fFjNAm2f32mE3UC",
+      "role": "user"
     }
   ],
-  "budget": []
+  "budget": [
+    {
+      "id": "9dae",
+      "username": "Otávio",
+      "surname": "Vinicius",
+      "email": "otavio@gmail.com",
+      "telephone": "(11) 39483-3483",
+      "service": "Rebaixar o carro",
+      "description": "deixe ele baixo",
+      "maxBudget": "2500",
+      "timeService": "10 dias"
+    }
+  ]
 }
