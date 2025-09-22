@@ -1,10 +1,12 @@
-//Icones 
-import { Award, Users, Clock, ThumbsUp, CheckCircle, TrendingUp, Shield,
-  Zap, Wrench, Car, MapPin, Phone, Mail, Calendar, Star } from "lucide-react";
+//Icones
+import {
+  Award, Users ,Clock, ThumbsUp, CheckCircle, TrendingUp, Shield, Zap,
+  Wrench, Car, MapPin, Phone, Mail, Calendar, Star
+} from "lucide-react";
 
 //Components
 import Header from "../components/header.jsx";
-import Footer from "../components/footer.jsx"
+import Footer from "../components/footer.jsx";
 
 const AboutSection = () => {
   const stats = [
@@ -310,7 +312,7 @@ const AboutSection = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      className="w-full object-cover transition-transform duration-500 hover:scale-110"
                     />
                   </div>
                   <div className="p-6">

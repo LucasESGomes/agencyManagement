@@ -25,9 +25,9 @@ const router = createBrowserRouter([
   {path: '/', element: <Home />},
   {path: '/Cadastro', element: <Register />},
   {path: '/Entrar', element: <Login />},
-  {path: '/Sobre-Nos', element: < AboutUs/>},
+  {path: '/Sobre-Nos', element: <AboutUs />},
   {path: '/Formulario-Orcamento', element: <FormBudget />},
-  {path: '/editarOrcamento', element: < BudgetEdit/>}
+  {path: '/editarOrcamento', element: <BudgetEdit />}
 ]);
 
 

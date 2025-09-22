@@ -48,14 +48,14 @@ export default function Register() {
       body: JSON.stringify(newUser),
     });
 
-    // Salvando informaçoes do usuário no localStorage
-    localStorage.setItem(
+    // Salvando informaçoes do usuário no sessionStorage
+    sessionStorage.setItem(
       "userData",
       JSON.stringify({ username, surname, email, telephone })
     );
 
     if (response.ok) {
-      setMessage("Usuário registrado com sucesso!");
+      setMessage("Conta criada com sucesso!");
       setUsername("");
       setSurname("");
       setEmail("");

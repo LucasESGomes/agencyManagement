@@ -1,8 +1,18 @@
 import { useState, useEffect } from "react";
 
 //Icons
-import {User, Mail, Phone, Wrench, FileText, DollarSign,
-    Clock, Send, ClipboardCheck, Car } from "lucide-react";
+import {
+  User,
+  Mail,
+  Phone,
+  Wrench,
+  FileText,
+  DollarSign,
+  Clock,
+  Send,
+  ClipboardCheck,
+  Car,
+} from "lucide-react";
 
 //Components
 import Header from "../components/header";
@@ -18,7 +28,7 @@ export default function FormBudget() {
 
   // Buscando dados do usuário
   useEffect(() => {
-    const data = localStorage.getItem("userData");
+    const data = sessionStorage.getItem("userData");
     if (data) {
       setUserData(JSON.parse(data));
     }

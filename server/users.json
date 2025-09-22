@@ -44,19 +44,53 @@
       "telephone": "(11) 39483-3483",
       "password": "$2a$10$IdCuoiPIu9ApJqgrJYhsJuAPy9eY0IPa2asnX4fFjNAm2f32mE3UC",
       "role": "user"
+    },
+    {
+      "id": "86b9",
+      "username": "Sillas",
+      "surname": "Bastianelli Pinto",
+      "email": "sillas@gmail.com",
+      "telephone": "(11) 98349-3448",
+      "password": "$2a$10$rvGhkiACiyiLBNW4SXs54.a0IfIOJeHwYPnf7q7fNa9fvkHVPFP2a",
+      "role": "user"
+    },
+    {
+      "id": "bc9f",
+      "username": "Igor",
+      "surname": "Teixeira",
+      "email": "igorteixeira@gmail.com",
+      "telephone": "(11) 23123-1232",
+      "password": "$2a$10$t3LFTDnxaSzL5Gv4606c5u2gEgRShq/cZDogtNcIZXBunZeZK78sS",
+      "role": "user"
+    },
+    {
+      "id": "5637",
+      "username": "Lucas",
+      "surname": "Gomes",
+      "email": "lucasgomesferreira2008@gmail.com",
+      "telephone": "(11) 98646-8289",
+      "password": "$2a$10$O9IPpI7exOJFI05oAm0FPOnLmUJ7gdPBiQ/hg1TF7BLBAvHdDPlLW",
+      "role": "user"
     }
   ],
   "budget": [
     {
-      "id": "9dae",
-      "username": "Otávio",
-      "surname": "Vinicius",
-      "email": "otavio@gmail.com",
-      "telephone": "(11) 39483-3483",
+      "id": "d157",
+      "service": "Limpeza",
+      "maxBudget": "150,00",
+      "timeService": "1 dia"
+    },
+    {
+      "service": "Troca de óleo de 2 carros",
+      "maxBudget": "100.00",
+      "timeService": "5 dias",
+      "id": "ceb2"
+    },
+    {
+      "id": "3476",
       "service": "Rebaixar o carro",
-      "description": "deixe ele baixo",
-      "maxBudget": "2500",
-      "timeService": "10 dias"
+      "maxBudget": "100,00",
+      "timeService": "4 dias"
     }
   ]
 }

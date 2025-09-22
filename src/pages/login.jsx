@@ -4,9 +4,9 @@ import bcrypt from "bcryptjs";
 
 //Icons
 import { Car } from "lucide-react";
-import { LogIn } from "lucide-react"
-import { Wrench } from "lucide-react"
-import { Shield } from "lucide-react"
+import { LogIn } from "lucide-react";
+import { Wrench } from "lucide-react";
+import { Shield } from "lucide-react";
 
 //Components
 import Header from "../components/header";
@@ -180,6 +180,18 @@ export default function Login() {
                 <LogIn className="w-5 h-5" />
                 Entrar no Sistema
               </button>
+
+              <div className="mt-6 text-center">
+                <p className="text-gray-600">
+                  Ainda não possui conta?{" "}
+                  <a
+                    href="/Cadastro"
+                    className="text-[#c61010] font-semibold hover:underline"
+                  >
+                    Cadastre-se
+                  </a>
+                </p>
+              </div>
 
               {message && (
                 <div className="mt-4 p-3 bg-red-100 border border-red-200 text-red-700 rounded-lg text-center">

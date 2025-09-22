@@ -14,13 +14,13 @@ const FeedbackSection = () => {
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
     },
     {
-      name: "Mariana Oliveira",
+      name: "Ricardinho ACF",
       role: "Cliente há 2 anos",
       content:
-        "Atendimento excepcional! Fui muito bem recebida, explicaram tudo detalhadamente e o prazo foi cumprido. Recomendo!",
+        "A oficina é execelente e é triste confessar mas a autoFix está à um nível acima da minha empresa ACF Performance.",
       rating: 5,
       image:
-        "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80",
+        "src/assets/img/Ricardinho.jpg",
     },
     {
       name: "Roberto Santos",
